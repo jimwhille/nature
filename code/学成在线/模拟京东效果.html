@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*自构思 往下加隐藏内容
+			.img{
+				width: 600px;
+				height: 700px;
+				margin-bottom: 200px;
+				overflow: hidden;
+				transition: all 3s;
+			}
+			img{
+				width: 600px;
+				height: 900px;
+			}
+			.img:hover{
+				overflow: initial; 无法加动画效果
+				height: 900px;
+			}*/
+			
+			/*往下拉伸
+			.img{
+				width: 600px;
+				height: 700px;
+				overflow: hidden;
+				transition: all 3s;
+			}
+			img{
+				width: 600px;
+				height: 900px;
+			}
+			.img:hover{
+				padding-bottom: 200px;
+			}*/
+			
+			
+			 /*京东效果 往左加空白区*/
+			.img{
+				float: left;
+				width: 500px;
+				height: 900px;
+				overflow: hidden;
+				transition: all 3s;
+			}
+			img{
+				width: 600px;
+				height: 900px;
+			}
+			.img:hover img{
+				margin-left: 100px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="img">
+			<img src="img/two.jpg"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.container{
+				margin: 100px auto;
+				width: 20px;
+			}
+			ul li{
+				width: 20px;
+				height: 20px;
+				margin: 3px 0;
+				background-color: pink;
+				list-style: none;
+				position: relative;
+				
+				
+			}
+			.container div{
+				width: 0px;
+				height: 20px;
+				background-color: purple;
+				position: absolute;
+				right: 0px;
+				top: 0;
+				z-index: -1;
+				transition: all 3s;
+			}
+			li:hover div{
+				width: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li>
+					<div ></div>
+				</li>
+				<li>
+					<div ></div>
+				</li>
+				<li>
+					<div ></div>
+				</li>
+				<li>
+					<div ></div>
+				</li>
+				<li>
+					<div ></div>
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+</html>
