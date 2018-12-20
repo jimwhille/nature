@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html,body{
+				min-width: 320px;
+				max-width: 540px;
+				background-color: yellow;
+				margin: 0 auto;
+				height: 2000px;
+				font: normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+			}
+			header{
+				height: 100px;
+				width: auto;
+				/*margin: 0 auto;*/
+			}
+			header img{
+				height: 100%;
+				width: 100%;
+			}
+			section ul{
+				margin-top: 5px;
+				width: 100%;
+				height: 90px;
+				background-color: #ffffff;
+				border-radius: 10px;
+			}
+			section li{
+				list-style: none;
+				float: left;
+				width: 20%;
+				height: 100%;
+				position: relative;
+			}
+			section li img{
+				position: absolute;
+				top: 5%;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 32px;
+				height: auto;
+				padding-top: 10px;
+			}
+			section span{
+				position: absolute;
+				bottom: 10%;
+				left: 50%;
+				white-space: nowrap;
+				transform: translateX(-50%);
+				margin-bottom: 10px;
+			}
+			nav{
+				/*border: 1px solid #cccccc;	*/
+				padding: 4px 4px;
+			}
+			nav .row{
+				display: flex;
+				height: 90px;
+				border-radius:8px ;
+				overflow: hidden;
+				margin: 6px 2px;
+				background: -webkit-linear-gradient(left,#FF697A,orange)
+				/*background-color: #FF697A;*/	
+			}
+			.row div{										/*此处要用div，row13用于后面设置*/
+				height: 100%;
+				flex: 1;
+				border-right: 1px solid #FFFFFF ;
+			}
+			nav .row:nth-child(2){
+				/*background-color: #3d98ff;*/
+				background: -webkit-linear-gradient(left,#3d98ff,deepskyblue)
+			}
+			nav .row:nth-child(3){
+				background-color: #65c10b;
+				background: -webkit-linear-gradient(left,#65c10b,greenyellow)
+			}	
+			nav div:last-child{
+				border-right: 0;
+			}
+			nav .row13{
+				display: flex;
+				flex-direction: column; 
+			}
+			.row div a{							/*样式统一写在一处容易处理*/
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-shadow: 0 0 2px rgba(0,0,0,0.8);
+				color: #FFFFFF;
+				font-size: 20px;
+				text-decoration: none;
+			}
+			.row13 a{
+				/*display: block;
+				width: 100%;
+				height: 100%;*/
+				flex: 1;
+				text-align: center;
+				line-height: 45px;
+			}
+			.row13 a:first-child{
+				border-bottom: 1px solid #FFFFFF;
+			}
+			.row em{
+				display: block;
+				height: 45px;
+				text-align: center;
+				line-height: 45px;
+				font-style: normal;
+			}
+			.row i{
+				display: block;
+				width: 43px;
+				height: 43px;
+				margin: -5px auto;
+				background: url(img/un_ico_home_v620.png) no-repeat 0 -127px;
+				background-size: 104px;
+			}
+			.row .icon-flight{
+				background-position: 0 -291px;
+			}
+			.row .icon-tour{
+				background-position: 0 -180px;
+			}
+			nav .extraNav{
+				width: 100%;
+				height: 110px;
+				background-color: #FFFFFF;
+				border-radius:10px ;
+				display: flex;
+				border: 1px solid rgba(0,0,0,0.1);
+			}
+			nav .extraNav li{
+				flex: 1;
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+			}
+			nav .extraNav li a{
+				flex: 1;
+				display: block;
+				height: 50%;
+				text-decoration: none;
+			}
+			nav .extraNav i{
+				display: block;
+				width: 24px;
+				height: 22px;
+				margin: 5px auto;
+				background: url(pic/un_ico_subnav_v7.124@2x.png) no-repeat 0 0px;
+				background-size: 24px;
+			}
+			
+			nav .extraNav #first{
+				background-position: 0 -25px;
+				
+			}
+			nav .extraNav #secord{
+				background-position: 0 -54px;
+				
+			}
+			nav .extraNav #third{
+				background-position: 0 -85px;
+				
+			}
+			nav .extraNav #fourth{
+				background-position: 0 -112px;
+				
+			}
+			nav .extraNav #fifth{
+				background-position: 0 -140px;
+				
+			}
+			nav .extraNav #sixth{
+				background-position: 0 -169px;
+				
+			}
+			nav .extraNav #seventh{
+				background-position: 0 -197px;
+				
+			}
+			nav .extraNav #eighth{
+				background-position: 0 -274px;
+				
+			}
+			nav .extraNav #ninth{
+				background-position: 0 -247px;
+				
+			}
+			/*nav .extraNav #secord{
+				background: url(pic/un_ico_subnav_v7.124@2x.png) no-repeat 0 -25px;
+				background-size: 24px;
+			}*/
+			nav .extraNav span{
+				display: block;
+				height: 20px;
+				text-align: center;
+			}
+			
+			.recommand{
+				width:100% ;
+				margin-top: 5px;
+				background-color: #FFFFFF;
+				border-top:1px solid rgba(0,0,0,0.1) ;
+			}
+			.recommand .header{
+				width: 100%;
+				height: 50px;
+				padding: 15px 10px;
+			}
+			.recommand .header .leftHeader{
+				float: left;
+			}
+			.recommand li{
+				list-style: none;
+				float: left;
+				width: 72px;
+				height: 20px;
+			}
+			.recommand .header li:first-child{
+				background: url(pic/un_home_text.png) no-repeat 0,-17px;
+				background-size: 72px;
+			}
+			.recommand .header li:last-child{
+				height: 15px;
+				border-radius: 10px;
+				background: url(pic/icon-gg@2x.png) no-repeat 4px,4px;
+				background-size: 40px;
+			}
+			.recommand .rightHeader{
+				font-size: 13px;
+				text-align: center;
+				line-height: 20px;
+				width: 110px;
+				height: 100%;
+				border-radius: 10px;
+				float: right;
+				color: #ffffff;
+				background: -webkit-linear-gradient(left,#ff4e63,#ff6cc9)
+			}
+			
+			.recommand .container{
+				border-top: 1px solid rgba(0,0,0,.1);
+			}
+			.recommand .container .contentUp{
+				/*width: 100%;
+				height: 190px;*/
+				display: flex;
+			}
+			.recommand .container li{
+				border-bottom:1px solid rgba(0,0,0,.1) ;
+			}
+			.recommand .container li:nth-child(2n-1){
+				border-right: 1px solid rgba(0,0,0,.1);
+			}
+			 .recommand .container .contentUp li{
+				height:190px ;
+				flex: 1;
+			}
+			.recommand .container .contentUp li:first-child{
+				background: url(pic/zc0g0i0000009fvbaa666.png) no-repeat;
+				background-size: auto 190px;
+			}
+			.recommand .container .contentUp li:last-child{
+				background: url(pic/zc020i0000009fsyo72c8.png) no-repeat;
+				background-size: auto 190px;
+			}
+			.recommand .contentMiddle{
+				display: flex;
+			}
+			.recommand .contentMiddle li{
+				flex: 1;
+				height: 116px;
+			}
+			.recommand .contentMiddle li:first-child{
+				background: url(pic/zc0i0i0000009fp077b7e.png) no-repeat;
+				background-size: auto 116px;
+			}
+			.recommand .contentMiddle li:last-child{
+				background: url(pic/zc0n0i0000009fus5c105.png) no-repeat;
+				background-size: auto 116px;
+			}
+			.recommand .contentDown{
+				display: flex;
+			}
+			.recommand .contentDown li{
+				flex: 1;
+				height: 116px;
+			}
+			.recommand .contentDown li:first-child{
+				background: url(pic/zc0t0i0000009fpu498e1.png) no-repeat;
+				background-size: auto 116px;
+			}
+			.recommand .contentDown li:last-child{
+				background: url(pic/zc0v0i0000009fwnfb030.png) no-repeat;
+				background-size: auto 116px;
+			}
+			
+			footer{
+				margin-top: 5px;
+				border-radius: 10px;
+				background-color: #FFFFFF;
+			}
+			footer ul{
+				display: flex;
+			}
+			footer li{
+				list-style: none;
+				flex: 1;
+				text-align: center;
+			}
+			footer ul i{
+				margin: 5px auto;
+				display: block;
+				width: 22px;
+				height: 18px;
+				background: url(img/un_ico_home_v620.png) no-repeat -57px -152px;
+				background-size: 104px;
+			}
+			footer ul #client{
+				background-position: -57px -173px;
+			}
+			footer ul #mine{
+				background-position: -58px -310px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/1.jpg" />
+		</header>
+		
+		<section>
+			<ul>
+				<li><a href=""><img src="img/scenic spots.png"><span>景点·玩乐</span></a></li>
+				<li><a href=""><img src="img/surrounding.png"><span>周边游</span></a></li>
+				<li><a href=""><img src="img/cate.png"><span>美食林</span></a></li>
+				<li><a href=""><img src="img/day trip.png"><span>一日游</span></a></li>
+				<li><a href=""><img src="img/local guide.png"><span>当地攻略</span></a></li>
+			</ul>
+		</section>
+		
+		<nav>
+			<div class="row">
+				<!--自构思-->
+				<!--<dl>
+					<dt><p>酒店</p><img src="img/grid-nav-items-hotel.png"></dt>
+					<dd>
+						<ul>
+							<li>海外酒店</li>
+							<li>特价酒店</li>
+						</ul>
+						<ul>
+							<li>团购</li>
+							<li>民宿·客栈</li>
+						</ul>
+					</dd>
+				</dl>-->
+				<div>
+					<a href="#">
+						<em>酒 店</em>
+						<i></i>
+					</a>
+				</div>
+				<div class="row13">
+					<a href="#">海外酒店</a>
+					<a href="#">特价酒店</a>
+				</div>
+				<div class="row13">
+					<a href="#">团购</a>
+					<a href="#">龙咁威客栈</a>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<a href="#">
+						<em>机 票</em>
+						<i class="icon-flight"></i>
+					</a>
+				</div>
+				<div class="row13">
+					<a href="#">火车票</a>
+					<a href="#">特价机票</a>
+				</div>
+				<div class="row13">
+					<a href="#">汽车票·船票</a>
+					<a href="#">专车·租车</a>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<a href="#">
+						<em>旅 游</em>
+						<i class="icon-tour"></i>
+					</a>
+				</div>
+				<div class="row13">
+					<a href="#">门票</a>
+					<a href="#">目的地攻略</a>
+				</div>
+				<div class="row13">
+					<a href="#">邮轮旅行</a>
+					<a href="#">定制旅行</a>
+				</div>
+			</div>
+			<ul class="extraNav">
+				<li>
+					<a href="#">
+						<i></i>
+						<span id="">
+							WiFi电话卡
+						</span>
+					</a>
+					<a href="#">
+						<i id="first"></i>
+						<span id="">
+							保险·签证
+						</span>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<i id="secord"></i>
+						<span id="">
+							外币兑换
+						</span>
+					</a>
+					<a href="#">
+						<i id="third"></i>
+						<span id="">
+							当地向导
+						</span>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<i id="fourth"></i>
+						<span id="">
+							礼品卡
+						</span>
+					</a>
+					<a href="#">
+						<i id="fifth"></i>
+						<span id="">
+							自由行
+						</span>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<i id="sixth"></i>
+						<span id="">
+							境外玩乐
+						</span>
+					</a>
+					<a href="#">
+						<i id="seventh"></i>
+						<span id="">
+							信用卡
+						</span>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<i id="eighth"></i>
+						<span id="">
+							购物
+						</span>
+					</a>
+					<a href="#">
+						<i id="ninth"></i>
+						<span id="">
+							更多
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="recommand">
+			<div class="header">
+				<ul class="leftHeader">
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="rightHeader">
+					获取更多福利>
+				</div>
+			</div>
+			<div class="container">
+				<ul class="contentUp">
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="contentMiddle">
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="contentDown">
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<ul>
+				<li>
+					<i id="phone">
+					</i>
+					电话预订
+				</li>
+				<li>
+					<i id="client">
+					</i>
+					下载客户端
+				</li>
+				<li>
+					<i id="mine">
+					</i>
+					我的
+				</li>
+			</ul>
+		</footer>
+	</body>
+</html>
